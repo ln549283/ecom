@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// In App.js in a new project
 
-export default function App() {
+import React, {useState, useEffect} from 'react';
+import { View, Text, StyleSheet, Button, ActivityIndicator } from 'react-native';
+import { enableScreens } from 'react-native-screens';
+import Routes from './routes'
+import { Provider as StoreProvider} from 'react-redux'
+import store from './redux/store'
+import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
+import styles from './styles/style';
+
+enableScreens();
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'red',
+    secondary: 'blue'
+  },
+};
+
+function App(){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <StoreProvider store={store}>
+      <PaperProvider theme={theme}>
+          <Routes />
+      </PaperProvider>
+    </StoreProvider>
+    
+  )
+   
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
