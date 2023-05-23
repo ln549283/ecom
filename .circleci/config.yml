@@ -1,29 +1,23 @@
 version: 2.1
-executors:
-  react-native-executor:
-    docker:
-      - image: cimg/node:16.18.0
-    environment:
-      NPM_CONFIG_LOGLEVEL: info
+orbs:
+  node: circleci/node@5.1.0
 
 jobs:
   build:
-    executor: react-native-executor
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable    
     steps:
-      - checkout
-
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-
+      - node/install:
+          node-version: '16.18.0' 
+          install-yarn: false 
       - run:
           name: Install dependencies
           command: npm ci
-
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
-
       - run:
           name: Build and test
           command: npm run test
