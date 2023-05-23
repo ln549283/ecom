@@ -12,6 +12,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm ci
+      - run:
+          name: Run app
+          command: npm run web
 workflows:
   build-deploy:
     jobs:
