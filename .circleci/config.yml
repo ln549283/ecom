@@ -8,12 +8,12 @@ jobs:
       # replace with your preferred image
       - image: cimg/base:stable    
     steps:
+      - checkout
       - node/install:
-          node-version: '16.18.0' 
-          install-yarn: false 
+          node-version: '16.18.0'
       - run:
           name: Install dependencies
-          command: npm install
+          command: npm ci
 workflows:
   build-deploy:
     jobs:
