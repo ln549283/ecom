@@ -13,7 +13,7 @@ jobs:
           node-version: '16.18.0'
       - run:
           name: Install dependencies
-          command: npm ci
+          command: npm install
 workflows:
   build-deploy:
     jobs:
