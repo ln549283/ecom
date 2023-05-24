@@ -9,12 +9,11 @@ jobs:
       - image: cimg/base:stable    
     steps:
       - checkout
+      - node/install:
+          node-version: '16.18.0'
       - run:
           name: Install dependencies
           command: npm ci
-      - run:
-          name: Run app
-          command: npm run web
 workflows:
   build-deploy:
     jobs:
