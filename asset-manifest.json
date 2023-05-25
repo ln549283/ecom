@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/ecom/static/js/main.05a472da.js",
+    "main.js": "/ecom/static/js/main.6f21bcbd.js",
     "static/js/137.ea662606.js": "/ecom/static/js/137.ea662606.js",
     "static/media/ForestWalk-320bit.mp3": "/ecom/static/media/ForestWalk-320bit.5b409f7611748171c144.mp3",
     "static/media/MaterialCommunityIcons.ttf": "/ecom/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
@@ -13,11 +13,11 @@
     "favicon-16.png": "/ecom/favicon-16.png",
     "manifest.json": "/ecom/manifest.json",
     "serve.json": "/ecom/serve.json",
-    "main.05a472da.js.map": "/ecom/static/js/main.05a472da.js.map",
+    "main.6f21bcbd.js.map": "/ecom/static/js/main.6f21bcbd.js.map",
     "137.ea662606.js.map": "/ecom/static/js/137.ea662606.js.map"
   },
   "entrypoints": [
     "static/js/137.ea662606.js",
-    "static/js/main.05a472da.js"
+    "static/js/main.6f21bcbd.js"
   ]
 }
